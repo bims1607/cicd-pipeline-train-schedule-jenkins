@@ -1,12 +1,14 @@
-plugins {
+buildscript {
+  repositories {
+    gradlePluginPortal()
+  }
 
-  //inlude the nodeJS plugin to execute nodejs and npm tasks
-  id "com.moowork.node" version "1.2.0"
-}
-plugins {
-  id "com.github.node-gradle.node" version "3.1.1"
+  dependencies {
+    classpath "com.github.node-gradle:gradle-node-plugin:3.1.1"
+  }
 }
 
+apply plugin: 'com.github.node-gradle.node'
 node {
 	download = true
 	version = "9.11.1"
